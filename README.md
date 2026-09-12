@@ -1,5 +1,11 @@
 # Sensor Fusion with Complementary Filter
 
+## Engineering evidence
+
+- `tools/filter_compare.py` makes gyro drift versus complementary correction measurable from a repeatable sample window.
+- Run `python tools/filter_compare.py --alpha 0.98 --samples 500` to inspect the filter response.
+- The implementation emphasizes timing, calibration assumptions, and the accuracy/CPU trade-off of a lightweight estimator.
+
 ## Objective
 
 Fuse accelerometer and gyroscope data from an MPU6050 into a stable pitch and roll estimate using a complementary filter. The project shows a practical, low-compute alternative to a full Kalman filter that is still accurate enough for many balancing and orientation tasks.
